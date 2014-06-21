@@ -1,12 +1,12 @@
 # revision 17635
 # category Package
 # catalog-ctan /macros/latex/contrib/youngtab
-# catalog-date 2010-03-30 14:47:00 +0200
+# catalog-date 2012-04-16 12:07:42 +0200
 # catalog-license lppl1
 # catalog-version 1.1
 Name:		texlive-youngtab
 Version:	1.1
-Release:	7
+Release:	8
 Summary:	Typeset Young-Tableaux
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/youngtab
@@ -54,16 +54,3 @@ for the representations of groups, providing two macros,
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.1-2
-+ Revision: 757746
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.1-1
-+ Revision: 719967
-- texlive-youngtab
-- texlive-youngtab
-- texlive-youngtab
-
