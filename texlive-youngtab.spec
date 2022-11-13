@@ -1,19 +1,13 @@
-# revision 17635
-# category Package
-# catalog-ctan /macros/latex/contrib/youngtab
-# catalog-date 2012-04-16 12:07:42 +0200
-# catalog-license lppl1
-# catalog-version 1.1
 Name:		texlive-youngtab
-Version:	1.1
-Release:	12
+Version:	56500
+Release:	1
 Summary:	Typeset Young-Tableaux
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/youngtab
 License:	LPPL1
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,29 +19,24 @@ for the representations of groups, providing two macros,
 \yng(1) and \young(1) to generate the whole Young-Tableaux.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/youngtab/youngtab.sty
-%doc %{_texmfdistdir}/doc/latex/youngtab/README
-%doc %{_texmfdistdir}/doc/latex/youngtab/makeydoc
-%doc %{_texmfdistdir}/doc/latex/youngtab/makeydoc.bat
-%doc %{_texmfdistdir}/doc/latex/youngtab/youngtab.el
-%doc %{_texmfdistdir}/doc/latex/youngtab/youngtab.pdf
-%doc %{_texmfdistdir}/doc/latex/youngtab/youngtab.tex
+%{_texmfdistdir}/tex/generic/youngtab
+%doc %{_texmfdistdir}/doc/generic/youngtab
 #- source
-%doc %{_texmfdistdir}/source/latex/youngtab/youngtab.dtx
-%doc %{_texmfdistdir}/source/latex/youngtab/youngtab.ins
+%doc %{_texmfdistdir}/source/generic/youngtab
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
