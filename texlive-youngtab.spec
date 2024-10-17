@@ -3,7 +3,7 @@ Version:	56500
 Release:	2
 Summary:	Typeset Young-Tableaux
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/youngtab
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/youngtab
 License:	LPPL1
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.doc.r%{version}.tar.xz
