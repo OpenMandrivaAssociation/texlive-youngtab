@@ -1,6 +1,6 @@
 Name:		texlive-youngtab
-Version:	56500
-Release:	2
+Version:	73766
+Release:	1
 Summary:	Typeset Young-Tableaux
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/youngtab
