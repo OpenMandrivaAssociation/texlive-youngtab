@@ -1,45 +1,23 @@
-Name:		texlive-youngtab
-Version:	73766
-Release:	1
+%global tl_name youngtab
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.1
+Release:	%{tl_revision}.1
 Summary:	Typeset Young-Tableaux
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/youngtab
-License:	LPPL1
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.source.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/macros/generic/youngtab
+License:	lppl1
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/youngtab.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A package for typesetting Young-Tableaux, mathematical symbols
-for the representations of groups, providing two macros,
-\yng(1) and \young(1) to generate the whole Young-Tableaux.
+A package for typesetting Young-Tableaux, mathematical symbols for the
+representations of groups, providing two macros, \yng(1) and \young(1)
+to generate the whole Young-Tableau.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/youngtab
-%doc %{_texmfdistdir}/doc/generic/youngtab
-#- source
-%doc %{_texmfdistdir}/source/generic/youngtab
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
